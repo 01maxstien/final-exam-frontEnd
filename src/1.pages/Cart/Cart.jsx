@@ -10,11 +10,11 @@ import {Redirect} from 'react-router-dom'
 class Cart extends Component {
     state = {
         cartData : [],
-        TotalCheckout: 0,
         imputPenerima: '',
         inputKodePos : '',
         inputAlamat: '',
         isCheckout: false,
+        TotalCheckout: 0
     }
 
     componentWillReceiveProps(newProps){
@@ -179,7 +179,7 @@ class Cart extends Component {
                     <tbody>
                         {this.renderCart()}
                     </tbody>
-                <table/>
+                </table>
                    
                         { 
                          this.state.cartData.length > 0
@@ -215,27 +215,25 @@ class Cart extends Component {
                             </div>
                             <div className="row mt-3">
                                 <div className="col-8">
-                                <input type="text" onChange={(e)=>{this.setState({inputAlamat: e.target.value})}} className="form-control " placeholder="Alamat Tujuan"/>
+                                    <input type="text" onChange={(e)=>{this.setState({inputAlamat: e.target.value})}} className="form-control " placeholder="Alamat Tujuan"/>
                                 </div>
                                 <div className="col-4">
-                                <input type="text" onChange={(e)=>{this.setState({inputKodePos: e.target.value})}} className="form-control " placeholder="input kode pos"/>
+                                    <input type="text" onChange={(e)=>{this.setState({inputKodePos: e.target.value})}} className="form-control " placeholder="input kode pos"/>
                                 </div>
                             </div>
-                        </div>
+                        
                         <div className="row mt-3">
                             <div className="col-12">
                                 <input type="number" onChange={(e)=>{this.setState({inputUang: e.target.value})}} className="form-control" placeholder="Masukkan UanG" />
                             </div>
                         </div>
+                        </div>
                     </div>
                     :
-                    null
-                    }
-                  
-                </table>
+                    null}
             </div>
-        );}
-    }
+        );
+    }}
 }
 
 
